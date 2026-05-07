@@ -1,0 +1,46 @@
+@use '../../styles/utils';
+
+.Technology {
+  margin-left: auto;
+  display: grid;
+  grid-auto-flow: column;
+  column-gap: 32px;
+  align-items: center;
+  @include utils.adaptive-value('padding-top', 91, 64);
+
+  @include utils.onTablet {
+    display: flex;
+    flex-direction: column-reverse;
+    row-gap: 32px;
+  }
+
+  &__Column {
+    justify-self: flex-end;
+    display: grid;
+    grid-auto-flow: column;
+    @include utils.adaptive-value('column-gap', 64, 16);
+    max-width: 806px;
+    @include utils.adaptive-value('padding-left', utils.$max-page-padding, utils.$min-page-padding);
+
+    @include utils.onTablet {
+      grid-auto-flow: row;
+      row-gap: 40px;
+      justify-items: center;
+      @include utils.adaptive-value('padding-inline', utils.$max-page-padding, utils.$min-page-padding);
+      text-align: center;
+    }
+  }
+
+  &__Article {
+    display: grid;
+    row-gap: 24px;
+  }
+
+  &__Image {
+    display: block;
+    width: 100%;
+    @include utils.adaptive-value('height', 600, 258);
+    object-fit: cover;
+    object-position: center;
+  }
+}

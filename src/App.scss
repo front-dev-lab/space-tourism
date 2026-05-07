@@ -1,0 +1,48 @@
+@use './styles/utils';
+@use './styles/typography';
+
+.App {
+  position: relative;
+  overflow-x: hidden;
+  @extend %text-9;
+  color: utils.$c_white;
+  min-height: 600px;
+  height: 100vh;
+
+  @include utils.onMobile {
+    min-height: 800px;
+  }
+
+  &__Content {
+    min-height: fit-content;
+    height: 100%;
+    @include utils.adaptive-value('padding-top', utils.$max-header-height, utils.$min-header-height);
+  }
+
+  &__Header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 3;
+  }
+
+  &__Menu {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 2;
+    display: none;
+    transform: translateX(100%);
+    transition-property: transform;
+    transition-duration: utils.$anim-time;
+
+    @include utils.onMobile {
+      display: block;
+    }
+
+    &--Active {
+      transform: translateX(0);
+    }
+  }
+}

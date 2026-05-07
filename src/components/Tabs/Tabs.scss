@@ -1,0 +1,93 @@
+@use '../../styles/utils';
+@use '../../styles/typography';
+
+.Tabs {
+  display: grid;
+  width: max-content;
+
+  &--Destinations {
+    grid-auto-flow: column;
+    column-gap: 32px;
+  }
+
+  &--Crew {
+    grid-auto-flow: column;
+    @include utils.adaptive-value('column-gap', 40, 16);
+  }
+
+  &--Technology {
+    display: grid;
+    row-gap: 32px;
+    height: max-content;
+
+    @include utils.onTablet {
+      grid-auto-flow: column;
+      column-gap: 16px;
+    }
+  }
+
+  &__DestinationsBullet {
+    position: relative;
+    display: block;
+    padding-bottom: 15px;
+    @extend %text-8;
+    text-transform: uppercase;
+    color: utils.$c_white;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background-color: utils.$c_white;
+      scale: 0;
+      transition-property: scale;
+      transition-duration: utils.$anim-time;
+    }
+
+    &:hover,
+    &--Active {
+      &::after {
+        scale: 1;
+      }
+    }
+  }
+
+  &__CrewBullet {
+    display: block;
+    @include utils.adaptive-value('width', 15, 10);
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background-color: utils.$c_white;
+    opacity: 25%;
+    transition-property: opacity;
+    transition-duration: utils.$anim-time;
+
+    &:hover,
+    &--Active {
+      opacity: 1;
+    }
+  }
+
+  &__TechnologyBullet {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @include utils.adaptive-value('width', 80, 40);
+    aspect-ratio: 1;
+    border: 1px solid utils.$c_white;
+    border-radius: 50%;
+    color: utils.$c_white;
+    @extend %text-4;
+    transition-property: background-color, color;
+    transition-duration: utils.$anim-time;
+
+    &:hover,
+    &--Active {
+      background-color: utils.$c_white;
+      color: utils.$c_blue-900;
+    }
+  }
+}

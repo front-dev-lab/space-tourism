@@ -1,0 +1,17 @@
+@use '../../styles/utils';
+@use '../../styles/typography';
+
+.PageTitle {
+  @extend %text-5;
+  text-transform: uppercase;
+  color: utils.$c_white;
+
+  @include utils.onMobile {
+    text-align: center;
+  }
+
+  &__Number {
+    margin-right: 24px;
+    opacity: 0.25;
+  }
+}

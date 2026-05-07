@@ -1,0 +1,23 @@
+@use '../../styles/utils';
+@use '../../styles/typography';
+
+.NotFoundPage {
+  display: grid;
+  align-content: center;
+  background-image: url(./assets/space.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+
+  &__Content {
+    display: grid;
+    row-gap: 100px;
+    justify-items: center;
+  }
+
+  &__Title {
+    @extend %text-2;
+    text-transform: uppercase;
+    text-align: center;
+  }
+}

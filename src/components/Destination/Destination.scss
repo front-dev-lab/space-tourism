@@ -1,0 +1,56 @@
+@use '../../styles/utils';
+@use '../../styles/typography';
+
+.Destination {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  column-gap: 32px;
+
+  @include utils.onTablet {
+    grid-template-columns: 1fr;
+    row-gap: 32px;
+    justify-items: center;
+  }
+
+  
+  &__Image {
+    display: block;
+    @include utils.adaptive-value('padding', 30, 26);
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: contain;
+    object-position: center;
+
+    @include utils.onTablet {
+      width: 65%;
+    }
+  }
+
+  &__Column {
+    display: grid;
+    justify-items: center;
+    @include utils.adaptive-value('row-gap', 40, 24);
+    @include utils.adaptive-value('padding-inline', 47, 0);
+  }
+
+  &__Article {
+    @include utils.onTablet {
+      display: grid;
+      text-align: center;
+      align-items: center;
+    }
+  }
+
+  &__Title {
+    margin-bottom: 16px;
+    @extend %text-2;
+    text-transform: uppercase;
+  }
+
+  &__Text {
+    @include utils.adaptive-value('margin-bottom', 40, 24);
+    border-bottom: 1px solid utils.$c_gray;
+    @include utils.adaptive-value('padding-bottom', 40, 24);
+  }
+}

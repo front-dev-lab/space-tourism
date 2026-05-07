@@ -1,0 +1,16 @@
+@use '../../styles/utils';
+
+.TechnologyPage {
+  background-image: url(./assets/background-technology-desktop.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+
+  @include utils.onTablet {
+    background-image: url(./assets/background-technology-tablet.jpg);
+  }
+
+  @include utils.onMobile {
+    background-image: url(./assets/background-technology-mobile.jpg);
+  }
+}

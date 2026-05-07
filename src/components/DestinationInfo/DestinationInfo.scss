@@ -1,0 +1,28 @@
+@use '../../styles/utils';
+@use '../../styles/typography';
+
+.DestinationInfo {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 16px;
+  @extend %text-7;
+  text-transform: uppercase;
+
+  @include utils.onTablet {
+    text-align: center;
+  }
+
+  @include utils.onMobile {
+    grid-template-columns: 1fr;
+    row-gap: 24px;
+  }
+
+  &__Column {
+    display: grid;
+    row-gap: 12px;
+  }
+
+  &__Value {
+    @extend %text-6;
+  }
+}

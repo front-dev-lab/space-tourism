@@ -1,0 +1,48 @@
+@use '../../styles/utils';
+
+.Crew {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 32px;
+
+  @include utils.onTablet {
+    grid-template-columns: 1fr;
+    row-gap: 32px;
+    justify-items: center;
+  }
+
+  &__Column {
+    display: grid;
+    align-items: flex-end;
+
+    @include utils.onTablet {
+      justify-items: center;
+      row-gap: 24px;
+    }
+  }
+
+  &__Article {
+    display: grid;
+    row-gap: 24px;
+    max-width: 540px;
+
+    @include utils.onTablet {
+      text-align: center;
+    }
+  }
+
+  &__Image {
+    display: block;
+    width: 100%;
+    object-fit: contain;
+    object-position: center;
+
+    @include utils.onTablet {
+      width: 75%;
+    }
+
+    @include utils.onMobile {
+      width: 90%;
+    }
+  }
+}

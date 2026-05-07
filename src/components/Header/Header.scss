@@ -1,0 +1,39 @@
+@use '../../styles/utils';
+
+.Header {
+  display: grid;
+  grid-template-columns: max-content minmax(0, 736px);
+  align-items: center;
+  justify-content: space-between;
+  column-gap: 40px;
+  @include utils.adaptive-value('padding-top', 40, -25);
+  @include utils.adaptive-value('padding-left', utils.$max-header-padding-inline, utils.$min-page-padding);
+
+  @include utils.onTablet {
+    padding-top: 0;
+  }
+
+  @include utils.onMobile {
+    grid-template-columns: repeat(2, max-content);
+    padding-top: 24px;
+    @include utils.adaptive-value('padding-inline', utils.$max-header-padding-inline, utils.$min-page-padding);
+  }
+
+  &__Right {
+    background-color: rgba($color: utils.$c_white, $alpha: 0.1);
+    backdrop-filter: blur(40px);
+    -webkit-backdrop-filter: blur(40px);
+
+    @include utils.onMobile {
+      display: none;
+    }
+  }
+
+  &__Burger {
+    display: none;
+
+    @include utils.onMobile {
+      display: block;
+    }
+  }
+}

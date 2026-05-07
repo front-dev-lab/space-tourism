@@ -1,0 +1,8 @@
+@use '../../styles/utils';
+
+.Container {
+  margin: 0 auto;
+  max-width: utils.$max-width + px;
+  width: 100%;
+  @include utils.adaptive-value('padding-inline', utils.$max-page-padding, utils.$min-page-padding);
+}

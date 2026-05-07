@@ -1,0 +1,14 @@
+@use '../../styles/utils';
+@use '../../styles/typography';
+
+.SectionTitle {
+  display: grid;
+  @include utils.adaptive-value('row-gap', 16, 8);
+  @extend %text-3;
+  text-transform: uppercase;
+
+  &__Text {
+    opacity: 50%;
+    @extend %text-4;
+  }
+}

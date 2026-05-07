@@ -1,0 +1,79 @@
+@use 'utils';
+
+%text-1 {
+  font-family: Bellefair, "Times New Roman", Times, Baskerville, Georgia, serif;
+  @include utils.adaptive-value('font-size', 144, 80);
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 0px;
+}
+
+%text-2 {
+  font-family: Bellefair, "Times New Roman", Times, Baskerville, Georgia, serif;
+  @include utils.adaptive-value('font-size', 96, 56);
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 0px;
+}
+
+%text-3 {
+  font-family: Bellefair, "Times New Roman", Times, Baskerville, Georgia, serif;
+  @include utils.adaptive-value('font-size', 56, 24);
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 0px;
+}
+
+%text-4 {
+  font-family: Bellefair, "Times New Roman", Times, Baskerville, Georgia, serif;
+  @include utils.adaptive-value('font-size', 32, 18);
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 0px;
+}
+
+%text-5 {
+  font-family: "Barlow Condensed", Arial, "Helvetica Neue", Helvetica, sans-serif;
+  @include utils.adaptive-value('font-size', 28, 16);
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 15%;
+}
+
+%text-6 {
+  font-family: Bellefair, "Times New Roman", Times, Baskerville, Georgia, serif;
+  font-size: 28px;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 0px;
+}
+
+%text-7 {
+  font-family: "Barlow Condensed", Arial, "Helvetica Neue", Helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 2px;
+}
+
+%text-8 {
+  font-family: "Barlow Condensed", Arial, "Helvetica Neue", Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 2px;
+}
+
+%text-8-bold {
+  @extend %text-8;
+  font-weight: 700;
+}
+
+%text-9 {
+  font-family: Barlow, Arial, "Helvetica Neue", Helvetica, sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 180%;
+  letter-spacing: 0px;
+}
+

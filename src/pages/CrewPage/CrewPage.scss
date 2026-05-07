@@ -1,0 +1,16 @@
+@use '../../styles/utils';
+
+.CrewPage {
+  background-image: url(./assets/background-crew-desktop.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+
+  @include utils.onTablet {
+    background-image: url(./assets/background-crew-tablet.jpg);
+  }
+
+  @include utils.onMobile {
+    background-image: url(./assets/background-crew-mobile.jpg);
+  }
+}

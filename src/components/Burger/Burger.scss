@@ -1,0 +1,52 @@
+@use '../../styles/utils';
+
+%line {
+  display: block;
+  height: 3px;
+  background-color: utils.$c_white;
+}
+
+.Burger {
+  position: relative;
+  width: 24px;
+  height: 21px;
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    @extend %line;
+    transform-origin: transform;
+    transition-duration: utils.$anim-time;
+  }
+
+  &::before {
+    top: 0;
+  }
+
+  &::after {
+    bottom: 0;
+  }
+
+  &--Active {
+    &::before {
+      transform: translateY(8.5px) rotate(-45deg);
+    }
+
+    &::after {
+      transform: translateY(-8.5px) rotate(45deg);
+    }
+  }
+
+  &__Line {
+    @extend %line;
+    transition-duration: scale;
+    transition-duration: utils.$anim-time;
+
+    &--Active {
+      scale: 0;
+    }
+  }
+}

@@ -1,0 +1,11 @@
+@use '../../styles/utils';
+
+.Logo {
+  display: block;
+  @include utils.adaptive-value('width', 48, 40);
+  aspect-ratio: 1;
+  background-image: url('./assets/logo.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}

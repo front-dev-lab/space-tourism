@@ -1,0 +1,10 @@
+@use '../../styles/utils';
+
+.PageContent {
+  @include utils.adaptive-value('padding-block', utils.$max-page-padding-block, utils.$min-page-padding-block);
+
+  &__Content {
+    display: grid;
+    @include utils.adaptive-value('row-gap', 91, 64);
+  }
+}

@@ -1,0 +1,11 @@
+@use '../../styles/utils';
+
+.Menu {
+  height: 100%;
+  min-height: 450px;
+  background-color: rgba($color: utils.$c_white, $alpha: 0.1);
+  backdrop-filter: blur(40px);
+  -webkit-backdrop-filter: blur(40px);
+  padding-top: 133px;
+  padding-left: 32px;
+}

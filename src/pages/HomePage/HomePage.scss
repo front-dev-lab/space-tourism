@@ -1,0 +1,56 @@
+@use '../../styles/utils';
+@use '../../styles/typography';
+
+.HomePage {
+  display: grid;
+  align-content: center;
+  background-image: url(./assets/background-home-desktop.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+
+  @include utils.onTablet {
+    background-image: url(./assets/background-home-tablet.jpg);
+  }
+
+  @include utils.onMobile {
+    background-image: url(./assets/background-home-mobile.jpg);
+  }
+
+  &__Content {
+    display: grid;
+    grid-template-columns: minmax(0, 540px) 1fr;
+    align-items: center;
+    justify-content: space-between;
+    justify-items: flex-end;
+    column-gap: 120px;
+
+    @include utils.onTablet {
+      grid-template-columns: 1fr;
+      justify-items: center;
+      @include utils.adaptive-value('row-gap', 66, 119);
+    }
+  }
+
+  &__Article {
+    display: grid;
+    row-gap: 24px;
+
+    @include utils.onTablet {
+      text-align: center;
+    }
+  }
+
+  &__Title {
+    display: grid;
+    row-gap: 24px; 
+    @extend %text-1;
+    text-transform: uppercase;
+  }
+
+  &__TitleText {
+    display: block;
+    @extend %text-5;
+    text-transform: uppercase;
+  }
+}
