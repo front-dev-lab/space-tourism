@@ -13,6 +13,7 @@
 
   &__Column {
     display: grid;
+    row-gap: 32px;
     align-items: flex-end;
 
     @include utils.onTablet {
