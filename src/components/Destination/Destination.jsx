@@ -16,7 +16,7 @@ export const Destination = ({ destinations }) => {
   return (
     <div className="Destination">
       <img
-        src={selectedDestination.images}
+        src={"https://front-dev-lab.github.io/space-tourism/" + selectedDestination.images}
         alt={selectedDestination.name}
         className="Destination__Image"
       />

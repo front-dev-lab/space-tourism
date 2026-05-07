@@ -31,7 +31,7 @@ export const Crew = ({ crew }) => {
       </div>
 
       <img
-        src={selectedMember.image}
+        src={"https://front-dev-lab.github.io/space-tourism/" + selectedMember.image}
         alt={selectedMember.name}
         className="Crew__Image"
       />

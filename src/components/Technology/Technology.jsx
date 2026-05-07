@@ -28,7 +28,7 @@ export const Technology = ({ technologies }) => {
       </div>
 
       <img
-        src={selectedTechnology.images}
+        src={"https://front-dev-lab.github.io/space-tourism/" + selectedTechnology.images}
         alt={selectedTechnology.name}
         className="Technology__Image"
       />
